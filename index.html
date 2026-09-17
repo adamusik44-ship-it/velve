@@ -83,13 +83,17 @@
   .device-float{position:relative;animation:floaty 6s ease-in-out infinite;z-index:2}
   @keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-16px) rotate(-8deg)}}
   .device-svg{width:300px;height:auto;filter:drop-shadow(0 30px 40px rgba(42,32,27,.22))}
+  .device-photo{width:400px;max-width:94%;height:auto;position:relative;z-index:2;mix-blend-mode:multiply;filter:drop-shadow(0 30px 44px rgba(42,32,27,.22));animation:floatup 6s ease-in-out infinite}
+  @keyframes floatup{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .visual .device-photo{width:320px}
+  .price-card .device-photo{width:220px;margin:0 auto 12px;display:block}
   .flash-pulse{animation:flash 3.4s ease-in-out infinite}
   @keyframes flash{0%,88%,100%{opacity:.65}92%{opacity:1}}
   @media(max-width:860px){
     .hero-grid{grid-template-columns:1fr;text-align:center}
     .hero-copy{order:2}.device-stage{order:1;height:400px}
     .hero-sub{margin-inline:auto}.hero-actions,.hero-meta{justify-content:center}
-    .device-svg{width:230px}.halo{width:320px;height:320px}
+    .device-svg{width:230px}.device-photo{width:300px}.halo{width:320px;height:320px}
   }
 
   /* MARQUEE */
@@ -225,45 +229,7 @@
 
       <div class="device-stage">
         <div class="halo"></div>
-        <div class="device-float">
-          <!-- IPL handset, drawn in SVG -->
-          <svg class="device-svg" viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg" aria-label="מכשיר VELVÉ">
-            <defs>
-              <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#ffffff"/>
-                <stop offset=".45" stop-color="#f4e6df"/>
-                <stop offset="1" stop-color="#e2c9bd"/>
-              </linearGradient>
-              <linearGradient id="bodyEdge" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#d9bcae"/>
-                <stop offset=".5" stop-color="#fff"/>
-                <stop offset="1" stop-color="#d9bcae"/>
-              </linearGradient>
-              <radialGradient id="flash" cx="50%" cy="60%" r="60%">
-                <stop offset="0" stop-color="#fff"/>
-                <stop offset=".4" stop-color="#fce0d2"/>
-                <stop offset="1" stop-color="#e79f88"/>
-              </radialGradient>
-              <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#3a2f2a"/>
-                <stop offset="1" stop-color="#20140f"/>
-              </linearGradient>
-            </defs>
-            <!-- handle -->
-            <rect x="70" y="40" width="80" height="250" rx="40" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-            <!-- rose-gold ring -->
-            <rect x="70" y="150" width="80" height="14" fill="#c98f6e" opacity=".85"/>
-            <!-- LCD screen -->
-            <rect x="88" y="80" width="44" height="34" rx="7" fill="url(#screen)"/>
-            <text x="110" y="103" text-anchor="middle" font-family="Heebo, sans-serif" font-size="15" fill="#f7c9b3" font-weight="700">05</text>
-            <!-- button -->
-            <circle cx="110" cy="132" r="10" fill="#efd9cd" stroke="#c98f6e" stroke-width="1.5"/>
-            <!-- head / flash window -->
-            <path d="M62 285 q48 40 96 0 l-6 34 q-42 30 -84 0 z" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-            <ellipse class="flash-pulse" cx="110" cy="322" rx="40" ry="16" fill="url(#flash)"/>
-            <ellipse cx="110" cy="322" rx="40" ry="16" fill="none" stroke="#d9a98f" stroke-width="1.5"/>
-          </svg>
-        </div>
+        <img class="device-photo" src="assets/product.jpg" alt="מכשיר VELVÉ להסרת שיער IPL עם קירור קרח" />
       </div>
     </div>
   </div>
@@ -298,7 +264,7 @@
       <div class="cc win">
         <div class="kicker" style="color:var(--glow)">VELVÉ בבית</div>
         <h3>מכשיר אחד, כל הגוף</h3>
-        <div class="big">₪349</div>
+        <div class="big">₪369</div>
         <ul>
           <li>שימוש חופשי, כל הגוף</li>
           <li>תשלום אחד, בלי הפתעות</li>
@@ -343,16 +309,7 @@
   <div class="wrap">
     <div class="split reveal">
       <div class="visual">
-        <svg class="device-svg" viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg">
-          <rect x="70" y="40" width="80" height="250" rx="40" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-          <rect x="70" y="150" width="80" height="14" fill="#c98f6e" opacity=".85"/>
-          <rect x="88" y="80" width="44" height="34" rx="7" fill="url(#screen)"/>
-          <text x="110" y="103" text-anchor="middle" font-family="Heebo, sans-serif" font-size="15" fill="#f7c9b3" font-weight="700">05</text>
-          <circle cx="110" cy="132" r="10" fill="#efd9cd" stroke="#c98f6e" stroke-width="1.5"/>
-          <path d="M62 285 q48 40 96 0 l-6 34 q-42 30 -84 0 z" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-          <ellipse class="flash-pulse" cx="110" cy="322" rx="40" ry="16" fill="url(#flash)"/>
-          <ellipse cx="110" cy="322" rx="40" ry="16" fill="none" stroke="#d9a98f" stroke-width="1.5"/>
-        </svg>
+        <img class="device-photo" src="assets/product.jpg" alt="מכשיר VELVÉ IPL קירור קרח" />
       </div>
       <div class="story-copy">
         <div class="kicker">למה VELVÉ</div>
@@ -411,19 +368,10 @@
       <h2>הזמינו את VELVÉ שלכן</h2>
     </div>
     <div class="price-card reveal">
-      <svg class="device-svg" viewBox="0 0 220 360" xmlns="http://www.w3.org/2000/svg">
-        <rect x="70" y="40" width="80" height="250" rx="40" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-        <rect x="70" y="150" width="80" height="14" fill="#c98f6e" opacity=".85"/>
-        <rect x="88" y="80" width="44" height="34" rx="7" fill="url(#screen)"/>
-        <text x="110" y="103" text-anchor="middle" font-family="Heebo, sans-serif" font-size="15" fill="#f7c9b3" font-weight="700">05</text>
-        <circle cx="110" cy="132" r="10" fill="#efd9cd" stroke="#c98f6e" stroke-width="1.5"/>
-        <path d="M62 285 q48 40 96 0 l-6 34 q-42 30 -84 0 z" fill="url(#body)" stroke="url(#bodyEdge)" stroke-width="2"/>
-        <ellipse class="flash-pulse" cx="110" cy="322" rx="40" ry="16" fill="url(#flash)"/>
-        <ellipse cx="110" cy="322" rx="40" ry="16" fill="none" stroke="#d9a98f" stroke-width="1.5"/>
-      </svg>
+      <img class="device-photo" src="assets/product.jpg" alt="מכשיר VELVÉ IPL קירור קרח" />
       <div class="price-tag">מבצע השקה · מלאי מוגבל</div>
       <div><span class="price-old">מחיר מכון: ₪4,000+</span></div>
-      <div class="price-now">349 <small>₪</small></div>
+      <div class="price-now">369 <small>₪</small></div>
       <ul class="price-list">
         <li>מכשיר VELVÉ IPL עם מסך דיגיטלי</li>
         <li>חמש רמות עוצמה + מצב הבזק רציף</li>
@@ -474,7 +422,7 @@
 
 <script>
   var WA_NUMBER = "972500000000"; // TODO: החליפו במספר האמיתי
-  var WA_MSG = encodeURIComponent("היי! ראיתי את מכשיר ההסרה VELVÉ באתר ואשמח להזמין אחד (₪349, משלוח חינם). אפשר פרטים?");
+  var WA_MSG = encodeURIComponent("היי! ראיתי את מכשיר ההסרה VELVÉ באתר ואשמח להזמין אחד (₪369, משלוח חינם). אפשר פרטים?");
   var waUrl = "https://wa.me/" + WA_NUMBER + "?text=" + WA_MSG;
   ["waOrder","waFooter","waFloat"].forEach(function(id){
     var el=document.getElementById(id); if(el){el.href=waUrl;el.target="_blank";el.rel="noopener";}
